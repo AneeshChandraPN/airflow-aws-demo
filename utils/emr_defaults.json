@@ -1,0 +1,43 @@
+{   "Name": "default_job_flow_name",
+    "LogUri": "s3://nanhyama/default_job_flow_location",
+    "ReleaseLabel": "emr-5.9.0",
+    "Instances": {
+        "Ec2KeyName": "myaws-key",
+        "InstanceGroups": [
+            {
+                "Name": "Master nodes",
+                "Market": "ON_DEMAND",
+                "InstanceRole": "MASTER",
+                "InstanceType": "r3.xlarge",
+                "InstanceCount": 1
+            },
+            {
+                "Name": "Slave nodes",
+                "Market": "ON_DEMAND",
+                "InstanceRole": "CORE",
+                "InstanceType": "r3.xlarge",
+                "InstanceCount": 2
+            }
+        ],
+        "TerminationProtected": false,
+        "KeepJobFlowAliveWhenNoSteps": false
+    },
+    "Applications":[
+        { "Name": "spark" },
+        { "Name": "hive" },
+        { "Name": "ganglia" }
+    ],
+    "VisibleToAllUsers": true,
+    "JobFlowRole": "EmrRole",
+    "ServiceRole": "EmrServiceRole",
+    "Tags": [
+        {
+            "Key": "app",
+            "Value": "demo"
+        },
+        {
+            "Key": "environment",
+            "Value": "development"
+        }
+    ]
+}
