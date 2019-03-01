@@ -19,7 +19,7 @@
 
 from airflow.sensors.base_sensor_operator import BaseSensorOperator
 from airflow.utils.decorators import apply_defaults
-from dags.awsairflowlib.contrib.hooks import AwsGlueJobHook
+from dags.awsairflowlib.contrib.hooks.aws_glue_job_hook import AwsGlueJobHook
 
 
 class AwsGlueJobSensor(BaseSensorOperator):

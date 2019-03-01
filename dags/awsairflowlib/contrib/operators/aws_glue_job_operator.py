@@ -18,7 +18,7 @@
 # under the License.
 from __future__ import unicode_literals
 
-from dags.awsairflowlib.contrib.hooks import AwsGlueJobHook
+from dags.awsairflowlib.contrib.hooks.aws_glue_job_hook import AwsGlueJobHook
 from airflow.models import BaseOperator
 from airflow.utils.decorators import apply_defaults
 

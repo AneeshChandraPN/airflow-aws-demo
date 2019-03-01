@@ -42,7 +42,7 @@ s3_sensor = S3PrefixSensor(
 aws_glue_task = AWSGlueJobOperator(
     task_id="glue_task",
     job_name='nyc_raw_to_transform',
-    iam_role_name='AWSGlueServiceRole',
+    iam_role_name='AWSGlueServiceRoleDefault',
     dag=dag)
 
 S3_URI = "s3://{}/scripts/nyc_aggregations.py".format(S3_BUCKET_NAME)
